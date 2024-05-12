@@ -1,0 +1,80 @@
+{% extends "ecoapp/base.html" %}
+{% load static%}
+{% block title%} {% endblock title%}
+{% block bannerslider%}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static '/ecoapp/banner/b1.jpg' %}" class="d-block w-100 h-70" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'ecoapp/banner/b2.jpg' %}" class="d-block w-100 h-70" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'ecoapp/banner/b3.jpg'%}" class="d-block w-100 h-70" alt="...">
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">
+ 
+
+      </span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <div class="welcome">
+    <h1> Welcome Ramon Dary Products </h1>
+    <p>From farm to glass, New Ramon’s is proud of its range of quality dairy products, which include fresh milk, butter, cheese, flavoured & unflavoured long life milk, fermented milk and milk powder, made to suit the needs of our dynamic and fast growing market.
+</p>
+<p>
+    Our state of the art processing facilities having undergone a billion-shilling upgrade has seen the company vastly increase our milk intake and processing capacities, with newer, more efficient processing machines.</p>
+  </div>
+{% endblock bannerslider%}
+{% block maincontent%}
+
+
+<div class="suita">
+    <div class="suitb">
+      <a href="{% url 'CategoryView' 'GH' %}">
+        <p>Gee</p>
+        <img src="{% static 'ecoapp/image/cow-ghee.png'%}" >
+      </a>
+       
+    </div>
+    <div class="suitb">
+      <a href="{% url 'CategoryView' 'CR' %}">  <p>Curd</p>
+        <img src="{% static 'ecoapp/image/curd-total.png'%}" ></a>
+
+    </div>
+    <div class="suitb">
+      <a href="{% url 'CategoryView' 'ML' %}"></a>
+       
+      <p>Milk</p>
+      <img src="{% static 'ecoapp/image/cow-milk.png'%}" >
+    </div>
+    <a href="{% url 'CategoryView' 'MS' %}">
+      <div class="suitb">
+        <p>Milk Shake</p>
+        <img src="{% static 'ecoapp/image/milk-shake-chocolate.png'%}" >
+    </div>
+    </a>
+  
+
+</div>
+
+
+
+
+{% endblock maincontent%}

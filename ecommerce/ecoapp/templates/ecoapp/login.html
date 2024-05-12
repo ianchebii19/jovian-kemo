@@ -1,0 +1,43 @@
+{% extends "ecoapp/base.html" %}
+{% load static%}
+{% block title%}Customer LogIn {% endblock title%}
+{% block maincontent%}
+<div class="container vw-100">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3" >
+            <h3>LogIn</h3>
+        
+            <form action="" method="POST" novalidate class="shadow p-5">
+                {% if messages %}
+                <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field.label_tag }} {{ field }} <small class="text-danger">{{ field.errors|striptags }}</small><br>
+                {% endfor %}
+                <input type="submit" value="Submit" class="btn btn-primary">
+
+
+                <div>
+                    <a href="{%url 'CustomerRegistration'%}">Forget Password</a>
+                </div>
+                <div>
+                    <p class="text-danger">Create an Account
+                    <a href="{%url 'CustomerRegistration'%}">SignUp</a></p>
+                </div>
+            </form>
+
+      
+
+        </div>
+
+    </div>
+</div>
+{% endblock maincontent%}

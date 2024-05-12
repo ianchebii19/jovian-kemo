@@ -1,0 +1,43 @@
+{% extends "ecoapp/base.html" %}
+{% load static%}
+{% block title%}Category {% endblock title%}
+
+{% block maincontent%}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            {% for product in products %}
+        
+           <a href="#" class="list-group-item list-group-item-action"> {{ product.title }}</a>
+       
+        {% endfor %}
+        
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                {% for product in products %}
+                <div class="col text-center mb-4">
+                    <a href="{% url 'ProductDetail' product.id %}" class="btn">
+                        <div>
+                            <img src="{{ product.product_image.url }}" width="300px" height="200px" alt="">
+                            <div class="fw-bold">{{ product.title }}</div>
+                            <div class=" text-center">
+                                Ksh{{ product.discount_price }}/=
+                            </div>
+                            <div class="fw-bold text-center">Ksh{{ product.selling_price }}</div>
+                        </div>
+                    </a>
+                    
+
+                </div>
+                {% endfor %}
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock maincontent%}

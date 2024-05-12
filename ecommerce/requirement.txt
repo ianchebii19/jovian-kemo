@@ -1,0 +1,21 @@
+asgiref==3.8.1
+certifi==2024.2.2
+charset-normalizer==3.3.2
+Django==5.0.4
+idna==3.7
+requests==2.31.0
+sqlparse==0.5.0
+tzdata==2024.1
+urllib3==2.2.1
+
+  <form action="" method="POST" novalidate class="shadow p-5">
+                {% csrf_token %}
+                {% for form in form %}
+                <div> {{ form }} </div>
+                {% endfor %}
+                <button class="btn btn-primary" type="submit">Button</button>
+                <div>
+                    <p>Existing Customer</p>
+                    <a href="#">Login</a>
+                </div>
+            </form>
