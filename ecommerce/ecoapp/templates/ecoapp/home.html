@@ -1,6 +1,6 @@
 {% extends "ecoapp/base.html" %}
 {% load static%}
-{% block title%} {% endblock title%}
+{% block title%} Home{% endblock title%}
 {% block bannerslider%}
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -10,13 +10,14 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{% static '/ecoapp/banner/b1.jpg' %}" class="d-block w-100 h-70" alt="...">
+        <img src="{% static 'ecoapp/image/menswear-street2.png' %}" class="d-block w-100 h-70" alt="...">
       </div>
-      <div class="carousel-item">
-        <img src="{% static 'ecoapp/banner/b2.jpg' %}" class="d-block w-100 h-70" alt="...">
+      <div class="carousel-item ">
+        <img src="{% static 'ecoapp/image/mens_clothing_1.png' %}" class="d-block w-100 h-70" alt="...">
       </div>
+     
       <div class="carousel-item">
-        <img src="{% static 'ecoapp/banner/b3.jpg'%}" class="d-block w-100 h-70" alt="...">
+        <img src="{% static 'ecoapp/image/00-story.webp' %}" class="d-block w-100 h-70" alt="...">
       </div>
       
     </div>
@@ -35,12 +36,7 @@
 
 
   <div class="welcome">
-    <h1> Welcome Ramon Dary Products </h1>
-    <p>From farm to glass, New Ramon’s is proud of its range of quality dairy products, which include fresh milk, butter, cheese, flavoured & unflavoured long life milk, fermented milk and milk powder, made to suit the needs of our dynamic and fast growing market.
-</p>
-<p>
-    Our state of the art processing facilities having undergone a billion-shilling upgrade has seen the company vastly increase our milk intake and processing capacities, with newer, more efficient processing machines.</p>
-  </div>
+    <span class="welcome">Welcome to Ramon Stores!</span> Automatic discount will be applied on checkout. Same day delivery within Nairobi for orders placed before 3pm.
 {% endblock bannerslider%}
 {% block maincontent%}
 
@@ -48,26 +44,40 @@
 <div class="suita">
     <div class="suitb">
       <a href="{% url 'CategoryView' 'GH' %}">
-        <p>Gee</p>
-        <img src="{% static 'ecoapp/image/cow-ghee.png'%}" >
+        <p>Suits</p>
+        <img src="{% static 'ecoapp/image/SUIT3.jpg'%}" >
       </a>
        
     </div>
     <div class="suitb">
-      <a href="{% url 'CategoryView' 'CR' %}">  <p>Curd</p>
-        <img src="{% static 'ecoapp/image/curd-total.png'%}" ></a>
+      <a href="{% url 'CategoryView' 'CR' %}">  <p>Shirts</p>
+        <img src="{% static 'ecoapp/image/shirt1.jpg'%}" ></a>
 
     </div>
     <div class="suitb">
-      <a href="{% url 'CategoryView' 'ML' %}"></a>
+      <a href="{% url 'CategoryView' 'ML' %}">
+        <p>Trouser</p>
+      <img src="{% static 'ecoapp/image/trouser2.jpg'%}" >
+      </a>
        
-      <p>Milk</p>
-      <img src="{% static 'ecoapp/image/cow-milk.png'%}" >
+      
     </div>
     <a href="{% url 'CategoryView' 'MS' %}">
       <div class="suitb">
-        <p>Milk Shake</p>
-        <img src="{% static 'ecoapp/image/milk-shake-chocolate.png'%}" >
+        <p>Shoes</p>
+        <img src="{% static 'ecoapp/image/shoe1.jpg'%}" >
+    </div>
+    </a>
+    <a href="{% url 'CategoryView' 'BT' %}">
+      <div class="suitb">
+        <p>Belts</p>
+        <img src="{% static 'ecoapp\image\beltR1.jpg'%}" >
+    </div>
+    </a>
+    <a href="{% url 'CategoryView' 'WT' %}">
+      <div class="suitb">
+        <p>Whatches</p>
+        <img src="{% static 'ecoapp/image/watchR1.jpg'%}" >
     </div>
     </a>
   

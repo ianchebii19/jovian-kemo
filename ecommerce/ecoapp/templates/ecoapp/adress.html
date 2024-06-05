@@ -1,6 +1,6 @@
 {% extends "ecoapp/base.html" %}
 {% load static%}
-{% block title%}Customer Registration {% endblock title%}
+{% block title%}Address {% endblock title%}
 
 {% block maincontent%}
 <div class="container vw-100">
@@ -21,14 +21,25 @@
                            <h3>Adress {{forloop.counter}}</h3>
                        </div>
                        <ul class="list-group list-group-flush">
-                         <li class="list-group-item">Name: {{ad.name}}</li>
-                         <li class="list-group-item"> Location: {{ad.location}}</li>
-                         <li class="list-group-item">Mobile: {{ad.mobile}}</li>
-                         <li class="list-group-item">County: {{ad.county}}</li>
-                         <li class="list-group-item">City: {{ad.city}} </li>
-                        <li ><a href="#" class="btn btn-success">Profile</a></li>
-                         
+                        <li class="list-group-item">Name: {{ad.name}}</li>
+                        <li class="list-group-item"> Location: {{ad.location}}</li>
+                        <li class="list-group-item">Mobile: {{ad.mobile}}</li>
+                        <li class="list-group-item">County: {{ad.county}}</li>
+                        <li class="list-group-item">City: {{ad.city}} </li>
+
+
+
+
+                        
+
+
+                        <li class="list-group-item"><a href="{% url 'updateview' pk=ad.id %}" class="btn btn-success">Update Profile</a></li>
+
+
                        </ul>
+                       
+                         
+                     
                        
                      </div>
                       {%endfor%}

@@ -10,6 +10,8 @@ CATEGORY_CHOICES=(
    ('ML', 'Milk'),
    ('GH', 'Ghee'),
    ('MS', 'Milk Shake'),
+   ('BT', 'Belts'),
+   ('WT', 'Watches'),
 
 
 )
@@ -38,6 +40,14 @@ STATE_CHOICES = (  # Corrected variable name to STATE_CHOICES
       # Added a comma at the end of each tuple
 )
 
+STATUS_CHOICES=(
+    ('pedding', 'pedding'),
+    ('cancel', 'canceled'),
+    ('delivered','delivered'),
+    ('shipped', 'Shipped')
+
+)
+
 class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Corrected on_delete
     name = models.CharField(max_length=200)
@@ -47,6 +57,32 @@ class Customer(models.Model):
     city = models.CharField(choices=STATE_CHOICES, max_length=100)  # Corrected variable name to STATE_CHOICES
     def __str__(self):
         return self.name
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE) 
+    quantity = models.PositiveIntegerField(default=1)
+    
+    @property
+    def total(self):
+        return self.quantity * (self.product.selling_price - self.product.discount_price)
+""" 
+class payment(models.Model):
+    paid= models.BooleanField(defalult=False)
+    amount =models.FloatField()
+    razorpay_order_id=models.CharField(max_length=100, blank=True , null=True)
+    razor_payment_status =models.CharField(max_length=100, blank=True, null=True)
+
+class OrderPlaced(models.Model):
+     user = models.ForeignKey(User, on_delete=models.CASCADE)
+     customer = models.ForeignKey(User, on_delete=models.CASCADE)
+     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+     quantity = models.PositiveIntegerField(default=1)
+     order_date=models.DateTimeField(auto_now_add=True)
+     status = models.CharField(max_length=8, choices=STATUS_CHOICES, default='pending')
+     
+     def total_cost(self):
+        return self.quantity * self.product.discounted_price
 
 
+"""
     

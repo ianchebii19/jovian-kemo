@@ -20,12 +20,12 @@
                 <div class="col text-center mb-4">
                     <a href="{% url 'ProductDetail' product.id %}" class="btn">
                         <div>
-                            <img src="{{ product.product_image.url }}" width="300px" height="200px" alt="">
+                            <img src="{{ product.product_image.url }}" width="300px" height="250px" alt="">
                             <div class="fw-bold">{{ product.title }}</div>
-                            <div class=" text-center">
-                                Ksh{{ product.discount_price }}/=
+                            <div class=" fw-light text-decoration-line-through">
+                                Ksh{{  product.selling_price}}/=
                             </div>
-                            <div class="fw-bold text-center">Ksh{{ product.selling_price }}</div>
+                            <div class="fw-bold text-center">Ksh{{product.discount_price  }}</div>
                         </div>
                     </a>
                     
